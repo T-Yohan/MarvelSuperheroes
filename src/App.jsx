@@ -3,7 +3,7 @@ import './App.css'
 import { useEffect , useState } from 'react'
 import {Routes , Route} from 'react-router-dom' 
 import Liste from './Liste'
-import Detail from './detail'
+import Detail from './Detail'
 
 
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Liste/>} />
-      <Route path="/detail" element={<Detail/>} />
+      <Route path="/detail/:idHero" element={<Detail/>} />
     </Routes>
   )
 }

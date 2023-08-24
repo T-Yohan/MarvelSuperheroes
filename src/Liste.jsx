@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { firestore } from "./firebase";
 import { query, getDocs, collection } from "firebase/firestore";
 import InfoHeroes from "./common/InfoHeroes";
-import Hero from ''
+
 
 const Liste = () => {
   const [Heroes, setHeroes]   = useState([]);
@@ -38,12 +38,11 @@ const Liste = () => {
   }, []);
 
   //affichage de la liste
-  return <div> Liste
+  return <div>
     <br/>
-          {Loading ? 'chargement' : (
-        Heroes.map((itemHero) => (
-          <InfoHeroes key={InfoHeroes.id} data={itemHero} />
-        ))
+          {Loading ? 'chargement' : 
+        Heroes.map(itemHero => 
+          <InfoHeroes key={itemHero.id} data={itemHero} />
       )}
   </div>;
 };
